@@ -6,7 +6,7 @@ const BooksList = () => {
   const { files, loading, error } = useDrivePDFs()
 
   if (loading) 
-    return <p className="text-center text-2xl">Cargando libros...</p>;
+    return <p className="text-center text-2xl py-20">Cargando libros...</p>;
   if (error)
     return <p className="text-center">{error}</p>;
 
