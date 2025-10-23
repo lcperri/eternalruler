@@ -27,7 +27,8 @@ const BookCard = ({ book , loading, error } ) => {
             </h3>
             <div className="flex gap-2 justify-center">
               <a
-                href={book.webViewLink}
+                // href={book.webViewLink} esto muestra texto plano en algunos moviles.
+                href={`https://drive.google.com/file/d/${book.id}/preview`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-15 text-sm py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-400"
