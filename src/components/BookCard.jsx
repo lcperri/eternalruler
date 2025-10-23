@@ -9,7 +9,7 @@ const BookCard = ({ book , loading, error } ) => {
   const thumbnail = 
     book.id === bookIDWithoutTumb 
     ? sabiduriaVol2Tum
-    : book.thumbnailLink
+    : book.thumbnailLink?.replace('=s220', '=s600')
 
   return (
           <div
