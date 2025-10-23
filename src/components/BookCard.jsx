@@ -1,7 +1,7 @@
 import React from 'react'
 import sabiduriaVol2Tum from '../assets/sabiduria-vol2.png'
 
-const BookCard = ({ book }, loading, error) => {
+const BookCard = ({ book , loading, error } ) => {
   console.log(book)
 
   const bookIDWithoutTumb = '1hjelxF7GGybwtELthzi67i3ZRLQVkFsJ'
@@ -9,7 +9,7 @@ const BookCard = ({ book }, loading, error) => {
   const thumbnail = 
     book.id === bookIDWithoutTumb 
     ? sabiduriaVol2Tum
-    : book.thumbnailLink?.replace("=s220", "=s600")
+    : book.thumbnailLink
 
   return (
           <div
@@ -17,6 +17,7 @@ const BookCard = ({ book }, loading, error) => {
             className="w-76 sm:w-83 py-8 px-6 bg-gray-200 rounded-4xl shadow-lg hover:shadow-xl transition"
           >
             <img
+              // src=
               src={thumbnail}
               alt={book.name}
               className="mx-auto rounded-2xl mb-3 h-90 w-65 object-cover shadow"
