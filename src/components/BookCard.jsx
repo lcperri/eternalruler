@@ -81,7 +81,6 @@ import PDFViewer from './PDFViewer';
 
 export default function BookCard({ book }) {
     const [isModalOpen, setIsModalOpen] = useState(false);
-    console.log(book)
 
     const bookViewUrl = `https://drive.google.com/file/d/${book.id}/preview`;
     const bookDownloadUrl = `https://drive.google.com/uc?export=download&id=${book.id}`;
@@ -104,27 +103,25 @@ return (
             {book.name}
         </h3>
         <button
-            // onClick={() => setIsModalOpen(true)}
-            onClick={() => window.open(`/api/read?id=${book.id}`, "_blank")}
+            onClick={() => setIsModalOpen(true)}
+            // onClick={() => window.open(`/api/read?id=${book.id}`, "_blank")}
             className="cursor-pointer w-22 text-sm py-2 bg-red-400 text-white rounded-lg hover:bg-gray-500"
         >
             Ver
         </button>
 
-        <button
-        onClick={() =>
-            window.open(`/api/download/${book.id}?filename=${book.name}`)
-        }
+        <button onClick ={() =>
+                window.open(`/api/download/${book.id}?filename=${book.name}`)}
         >
         Descargar
         </button>
 
         {/* Modalde visor PDF */}
-        {/* <PDFViewer 
+        <PDFViewer 
             isOpen={isModalOpen}
             onClose={() => setIsModalOpen(false)}
             book={book} 
-        /> */}
+        />
     </div>
     )
 }

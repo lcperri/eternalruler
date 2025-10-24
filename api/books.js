@@ -16,7 +16,7 @@ export default async function handler (req, res) {
         res.status(200).json(data.files)
     }
     catch (err) {
-        console.error('Error al traer los archivos desde la AP de google', err)
+        console.error('Error al traer los archivos desde la API de google', err)
         res.status(500).json({message:'Internal server error =P'})
     }
 }

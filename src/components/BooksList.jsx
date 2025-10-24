@@ -15,7 +15,7 @@ const BooksList = () => {
       <div className="flex flex-wrap gap-8 justify-center">
         { files.map((file, index) => (
           <BookCard key={ file.id || index } book= { file } loading={ loading } error={ error } />
-        ))}
+        )) }
       </div>
     </div>
   )
