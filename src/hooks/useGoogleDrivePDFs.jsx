@@ -8,13 +8,14 @@ export function useDrivePDFs() {
 
     useEffect(() => {
         fetch("api/books")
-        .then(res => {
+        .then(async (res) => {
             if (!res.ok) 
                 throw new Error("Error al obtener los libros. Hook --> API local")
-        })
-        .then(data => {
-            data = res.json()
+
+            const data = await res.json()
+            console.log(data.files)
             setFiles(data.files)
+        })
         })
         .catch(err => setError(err.message))
         .finally(() => setLoading(false));
