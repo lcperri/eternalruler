@@ -4,6 +4,10 @@ export default async function handler(req, res) {
 
   const bookUrl = `https://drive.google.com/uc?export=download&id=${id}`;
 
+  const safeFilename = filename
+    ? encodeURIComponent(filename)
+    : "archivo.pdf"
+
   try {
     const response = await fetch(bookUrl);
     if (!response.ok)
@@ -12,7 +16,7 @@ export default async function handler(req, res) {
     res.setHeader("Content-Type", "application/pdf");
     res.setHeader(
       "Content-Disposition",
-      `attachment; filename="${decodeURIComponent(filename) || "archivo.pdf"}.pdf"`
+      `attachment; filename*=UTF-8''${safeFilename}.pdf"`
     );
 
     const buffer = Buffer.from(await response.arrayBuffer());
