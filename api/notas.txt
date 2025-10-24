@@ -1,0 +1,22 @@
+Estamos creando un SERVERLESS para vercel, que es la modificación de un servidor tradicional node con express a funciones JS, 
+las cuales sirven el contenido cuando se les llama desde el front, por lo que no es como un server tradicional que está
+permanentemente escuchando en un puerto.
+
+Para poder probarlo de manera local instalamos:
+npm install -D vite-plugin-vercel
+
+Si la version de vite es muy nueva:
+npm install -D vite-plugin-vercel --legacy-peer-deps
+
+Y agrega en vite.config.js:
+
+import vercel from 'vite-plugin-vercel'
+import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+  plugins: [react(), vercel()],
+})
+
+
+Esto permitirá que las rutas /api/... funcionen también en desarrollo.

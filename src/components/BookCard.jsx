@@ -104,17 +104,27 @@ return (
             {book.name}
         </h3>
         <button
-        onClick={() => setIsModalOpen(true)}
-        className="cursor-pointer w-22 text-sm py-2 bg-red-400 text-white rounded-lg hover:bg-gray-500"
+            // onClick={() => setIsModalOpen(true)}
+            onClick={() => window.open(`/api/read?id=${book.id}`, "_blank")}
+            className="cursor-pointer w-22 text-sm py-2 bg-red-400 text-white rounded-lg hover:bg-gray-500"
         >
             Ver
         </button>
+
+        <button
+        onClick={() =>
+            window.open(`/api/download/${book.id}?filename=${book.name}`)
+        }
+        >
+        Descargar
+        </button>
+
         {/* Modalde visor PDF */}
-        <PDFViewer 
+        {/* <PDFViewer 
             isOpen={isModalOpen}
             onClose={() => setIsModalOpen(false)}
             book={book} 
-        />
+        /> */}
     </div>
     )
 }

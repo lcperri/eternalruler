@@ -1,20 +1,50 @@
 import { useState, useEffect } from "react";
-import { fetchGoogleDrivePDFs } from "../services/googleDriveServices";
+// import { fetchGoogleDrivePDFs } from "../services/googleDriveServices";
 
 export function useDrivePDFs() {
     const [files, setFiles] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null); 
 
-
     useEffect(() => {
-        fetchGoogleDrivePDFs()
-        .then((data) => {
-            setFiles(data);
-            setLoading(false);
-        })
-        .catch(err => setError(err))
-    }, []);
+        // fetch("api/books")
+        // .then(res => {
+        //     if (!res.ok) throw new Error("Error al obtener los libros. Hook --> API local")
+        //     console.log(res.json())
+        //     return res.json()
+        // })
+        // .then(setFiles)
+        // .catch(err => setError(err.message))
+        // .finally(() => setLoading(false));
+        const load = async () => {
+            try {
+                const res = await fetch('/api/books')
+                
+                if (!res.ok) {
+                    const text = await res.text()
+                    throw new Error(`API /api/files error ${res.status}: ${text}`)
+                }
+    
+                const data = await res.json()
+    
+            } catch (err) {
+                console.error("useDrivePDFs error:", err)
+            } finally {
+                setLoading(false)
+            }
+        }
+        load()
+    },[])
 
+
+    // ESTE CODIGO ERA CUADO SE LLAMABA A LA API DESDE EL FRONTEND:
+    // useEffect(() => {
+    //     fetchGoogleDrivePDFs()
+    //     .then((data) => {
+    //         setFiles(data);
+    //         setLoading(false);
+    //     })
+    //     .catch(err => setError(err))
+    // }, []);
     return { files, loading, error };
 }
