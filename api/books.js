@@ -2,13 +2,6 @@ export default async function handler (req, res) {
     const FOLDER_ID = process.env.FOLDER_ID
     const API_KEY = process.env.GOOGLE_API_KEY
  
-   if (!FOLDER_ID || !API_KEY) {
-        console.error("❌ Faltan variables de entorno:", { FOLDER_ID, API_KEY });
-        return res.status(500).json({ message: "Faltan variables de entorno" });
-    }
-
-    
-
     const query = `'${FOLDER_ID}' in parents and mimeType='application/pdf'`
     const encodedQuery = encodeURIComponent(query);
     const url = `https://www.googleapis.com/drive/v3/files?q=${encodedQuery}&key=${API_KEY}&fields=files(id,name,thumbnailLink,webViewLink)`
