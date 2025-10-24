@@ -111,7 +111,7 @@ return (
         </button>
 
         <a
-            href={`${window.location.origin}/api/download/${book.id}?filename=${encodeURIComponent(book.name)}`}
+            href={`${window.location.origin}/api/download?id=${book.id}&filename=${encodeURIComponent(book.name)}`}
             target="_blank"
             rel="noopener noreferrer"
             className="cursor-pointer w-28 text-sm py-2 bg-gray-400 text-white rounded-lg hover:bg-gray-600"
