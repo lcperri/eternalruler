@@ -111,7 +111,9 @@ return (
         </button>
 
         <button onClick ={() =>
-                window.open(`/api/download/${book.id}?filename=${book.name}`)}
+                    window.open(`${window.location.origin}/api/download/${book.id}?filename=${book.name}`)
+                }
+                className="cursor-pointer w-25 text-sm py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-700"
         >
         Descargar
         </button>
