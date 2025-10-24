@@ -16,7 +16,6 @@ export function useDrivePDFs() {
             setFiles(data)
             return data
         })
-        .then()
         .catch(err => setError(err.message))
         .finally(() => setLoading(false));
         
