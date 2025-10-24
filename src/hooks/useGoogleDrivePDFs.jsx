@@ -11,10 +11,10 @@ export function useDrivePDFs() {
         .then(res => {
             if (!res.ok) 
                 throw new Error("Error al obtener los libros. Hook --> API local")
-            
-            const data = res.json()
-            setFiles(data)
-            return data
+        })
+        .then(data => {
+            data = res.json()
+            setFiles(data.files)
         })
         .catch(err => setError(err.message))
         .finally(() => setLoading(false));
