@@ -110,13 +110,14 @@ return (
             Ver
         </button>
 
-        <button onClick ={() =>
-                    window.open(`${window.location.origin}/api/download/${book.id}?filename=${book.name}`)
-                }
-                className="cursor-pointer w-25 text-sm py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-700"
+        <a
+            href={`${window.location.origin}/api/download/${book.id}?filename=${encodeURIComponent(book.name)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cursor-pointer w-25 text-sm py-2 bg-gray-400 text-white rounded-lg hover:bg-gray-600"
         >
-        Descargar
-        </button>
+            Descargar
+        </a>
 
         {/* Modalde visor PDF */}
         <PDFViewer 
