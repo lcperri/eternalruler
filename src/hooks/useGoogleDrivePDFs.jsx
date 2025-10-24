@@ -13,8 +13,7 @@ export function useDrivePDFs() {
                 throw new Error("Error al obtener los libros. Hook --> API local")
 
             const data = await res.json()
-            console.log(data)
-            // setFiles(data.files)
+            setFiles(data)
         })
         .catch(err => setError(err.message))
         .finally(() => setLoading(false));
