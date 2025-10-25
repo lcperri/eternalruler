@@ -111,8 +111,10 @@ return (
         </button>
 
         <button
-            href={`${window.location.origin}/api/download?id=${book.id}&filename=${encodeURIComponent(book.name)}`}
-            target="_blank"
+            onClick={() => {
+                const url = `${window.location.origin}/api/download?id=${book.id}&filename=${encodeURIComponent(book.name)}`
+                window.open(url, '_blank')
+            }}
             rel="noopener noreferrer"
             className="ml-2 cursor-pointer w-24 text-sm py-2 bg-gray-400 text-white rounded-lg hover:bg-gray-600"
         >
