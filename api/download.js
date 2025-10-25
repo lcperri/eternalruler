@@ -14,10 +14,10 @@ export default async function handler(req, res) {
     // Se incluye un header User-Agent para que el servidor no descarte la petición
     // por venir de un "bot" o de un entorno serverless.
      const response = await fetch(driveUrl, {
-      headers: {
-        // Evita bloqueos de user-agent
-        "User-Agent": "Mozilla/5.0",
-      },
+      // headers: {
+      //   // Evita bloqueos de user-agent
+      //   "User-Agent": "Mozilla/5.0",
+      // },
     });
 
     if (!response.ok) {
