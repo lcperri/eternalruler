@@ -11,13 +11,13 @@ const PDFViewer = ({isOpen, onClose, book}) => {
             <div className="w-[100%] md:w-[80%] h-[100%] p-0 relative">
                 <button
                 onClick={() => onClose(false)}
-                className="cursor-pointer fixed z-10 right-39 md:right-180 bg-gray-300 hover:bg-gray-400 text-black rounded-full px-3 py-1 text-sm font-bold"
+                className="cursor-pointer absolute z-10 bottom-3 right-4 md:right-180 bg-gray-300 hover:bg-gray-400 text-black rounded-full px-3 py-1 text-sm font-bold"
                 >
                     X
                 </button>
                 <iframe
                     src={bookViewUrl}
-                    className="absolute z-0 right-[-25px] w-[115%] h-full rounded-xl items-center"
+                    className="z-0 w-[100%] h-full rounded-xl items-center"
                     // allow="autoplay"
                 >
                 </iframe>
