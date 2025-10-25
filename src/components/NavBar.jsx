@@ -9,7 +9,7 @@ const NavBar = () => {
                 ETERNAL RULER 
             </Link>
         </h2>
-        <div className='text-2xl md:text-4xl pb-4 text-red-300'>🙏📖⛥⚡ Biblioteca Digital 🌹🕎🕊♾</div>
+        <div className='text-xl md:text-4xl pb-4 text-red-300'>♾⛥⚡📖 Biblioteca Digital </div>
         {/* <div className='pt-4'> */}
             {/* <Link to="/" className='cursor-pointer underline hover:text-gray-700 font-semibold'> INICIO</Link> */}
         {/* </div> */}

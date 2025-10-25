@@ -105,19 +105,19 @@ return (
         <button
             onClick={() => setIsModalOpen(true)}
             // onClick={() => window.open(`/api/read?id=${book.id}`, "_blank")}
-            className="cursor-pointer w-22 text-sm py-2 bg-red-400 text-white rounded-lg hover:bg-gray-500"
+            className="mr-2 cursor-pointer w-22 text-sm py-2 bg-red-400 text-white rounded-lg hover:bg-red-300"
         >
-            Ver
+            Leer
         </button>
 
-        <a
+        <button
             href={`${window.location.origin}/api/download?id=${book.id}&filename=${encodeURIComponent(book.name)}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="cursor-pointer w-28 text-sm py-2 bg-gray-400 text-white rounded-lg hover:bg-gray-600"
+            className="ml-2 cursor-pointer w-24 text-sm py-2 bg-gray-400 text-white rounded-lg hover:bg-gray-600"
         >
             Descargar
-        </a>
+        </button>
 
         {/* Modalde visor PDF */}
         <PDFViewer 

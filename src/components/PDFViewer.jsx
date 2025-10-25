@@ -8,12 +8,12 @@ const PDFViewer = ({isOpen, onClose, book}) => {
 
     return (
         <div className="fixed inset-0 bg-black/60 flex justify-center items-center z-50">
-            <div className="bg-white rounded-2xl w-[100%] md:w-[80%] h-[98%] p-4 relative shadow-2xl">
+            <div className="rounded-2xl w-[100%] md:w-[80%] h-[100%] p-0 relative shadow-2xl">
                 <button
                 onClick={() => onClose(false)}
-                className="absolute top-2 right-2 bg-gray-300 hover:bg-gray-400 text-black rounded-full px-3 py-1 text-sm"
+                className="cursor-pointer absolute top-0 right-0 bg-gray-300 hover:bg-gray-400 text-black rounded-full px-3 py-1 text-sm font-bold"
                 >
-                x
+                    X
                 </button>
                 <iframe
                     src={bookViewUrl}
