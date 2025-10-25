@@ -18,6 +18,7 @@ export default async function handler(req, res) {
         // Evita bloqueos de user-agent
         "User-Agent": "Mozilla/5.0",
       },
+      redirect: 'follow'
     });
 
     if (!response.ok) {
