@@ -82,9 +82,6 @@ import PDFViewer from './PDFViewer';
 export default function BookCard({ book }) {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const bookViewUrl = `https://drive.google.com/file/d/${book.id}/preview`;
-    const bookDownloadUrl = `https://drive.google.com/uc?export=download&id=${book.id}`;
-
     const bookIDWithoutTumb = '1hjelxF7GGybwtELthzi67i3ZRLQVkFsJ'
 
     const thumbnail = 
@@ -125,7 +122,7 @@ return (
         <PDFViewer 
             isOpen={isModalOpen}
             onClose={() => setIsModalOpen(false)}
-            book={book} 
+            book={book.id} 
         />
     </div>
     )
