@@ -122,7 +122,7 @@ return (
         <PDFViewer 
             isOpen={isModalOpen}
             onClose={() => setIsModalOpen(false)}
-            book={book.id} 
+            book={book} 
         />
     </div>
     )

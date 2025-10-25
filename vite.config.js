@@ -9,15 +9,8 @@ export default defineConfig({
     tailwindcss()
   ],
   server: {
-      proxy: {
-        '/api': {
-          target: 'http://localhost:3000',
-          changeOrigin: true,
-        },
-      },
-    },
-    build: {
-      outDir: 'dist', // Carpeta de salida para Vercel
-    },
-    base: './', // 🔹 importante si usas rutas relativas en el deploy
+    proxy: {
+      "/api": "http://localhost:3000"
+    }
+  }
 })
