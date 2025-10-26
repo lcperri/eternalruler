@@ -102,7 +102,7 @@ export default function TikTokWarning() {
         </div>
 
         <div className="mt-6 text-sm text-gray-300 space-y-2">
-          <p className="font-medium text-white">O también puedes:</p>
+          <p className="font-medium text-white">Instrucciones:</p>
           <ol className="text-left space-y-1 pl-4 list-decimal">
             <li>Toca los <strong>tres puntos</strong> (⋯) arriba a la derecha</li>
             <li>Selecciona <strong>"Abrir en navegador"</strong></li>
