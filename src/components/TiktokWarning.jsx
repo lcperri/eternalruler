@@ -3,24 +3,23 @@ import React, { useEffect, useState } from "react";
 export default function TikTokWarning() {
   const [showModal, setShowModal] = useState(false);
   const [copied, setCopied] = useState(false);
-  const [debugInfo, setDebugInfo] = useState("");
 
   useEffect(() => {
-    const userAgent = navigator.userAgent;
-    
-    // Guardar info de debug
-    setDebugInfo(userAgent);
+    const userAgent = navigator.userAgent.toLowerCase();
     
     const isInApp = 
-      /tiktok/i.test(userAgent) || 
-      /bytedance/i.test(userAgent) ||
-      /musically/i.test(userAgent) ||
-      /fban|fbav|instagram/i.test(userAgent) ||
-      /line\//i.test(userAgent);
+      userAgent.includes('tiktok') || 
+      userAgent.includes('musical_ly') ||      // ✅ TikTok usa esto
+      userAgent.includes('bytelocale') ||      // ✅ También esto
+      userAgent.includes('bytedance') ||
+      userAgent.includes('fban') || 
+      userAgent.includes('fbav') || 
+      userAgent.includes('instagram') ||
+      userAgent.includes('line/');
     
-    // Forzar a mostrar siempre para testing
-    setShowModal(true); // 🔥 TEMPORAL: Muestra siempre el modal
-    
+    if (isInApp) {
+      setShowModal(true);
+    }
   }, []);
 
   const handleCopy = async () => {
@@ -56,6 +55,7 @@ export default function TikTokWarning() {
     if (/iphone|ipad|ipod/i.test(navigator.userAgent)) {
       window.location.href = currentUrl;
     } else {
+      // Para Android (como el tuyo)
       window.location.href = `intent://${currentUrl.replace(/^https?:\/\//, '')}#Intent;scheme=https;end`;
     }
   };
@@ -84,7 +84,7 @@ export default function TikTokWarning() {
         <div className="space-y-3">
           <button
             onClick={openInBrowser}
-            className="w-full flex items-center justify-center gap-2 bg-blue-500 hover:bg-blue-400 text-white px-6 py-3 rounded-lg transition font-medium"
+            className="w-full flex items-center justify-center gap-2 bg-red-300 hover:bg-red-400 active:bg-gray-600 text-white px-6 py-3 rounded-lg transition font-medium"
           >
             🌐 Abrir en navegador
           </button>
@@ -94,7 +94,7 @@ export default function TikTokWarning() {
             className={`w-full flex items-center justify-center gap-2 px-6 py-3 rounded-lg transition font-medium ${
               copied 
                 ? 'bg-green-500 text-white' 
-                : 'bg-white/10 hover:bg-white/20 text-white border border-white/30'
+                : 'bg-white/10 hover:bg-white/20 active:bg-white/30 text-white border border-white/30'
             }`}
           >
             {copied ? '✅ ¡Enlace copiado!' : '📋 Copiar enlace'}
@@ -103,19 +103,11 @@ export default function TikTokWarning() {
 
         <div className="mt-6 text-sm text-gray-300 space-y-2">
           <p className="font-medium text-white">Instrucciones:</p>
-          <ol className="text-left space-y-1 pl-4">
-            <li>1. Toca los <strong>tres puntos</strong> (⋯) arriba</li>
-            <li>2. Selecciona <strong>"Abrir en navegador"</strong></li>
-            <li>3. O copia el enlace y pégalo en Safari/Chrome</li>
+          <ol className="text-left space-y-1 pl-4 list-decimal">
+            <li>Toca los <strong>tres puntos</strong> (⋯) arriba a la derecha</li>
+            <li>Selecciona <strong>"Abrir en navegador"</strong></li>
+            <li>O copia el enlace y pégalo en Chrome</li>
           </ol>
-        </div>
-
-        {/* 🔍 DEBUG INFO - Eliminar después */}
-        <div className="mt-6 p-4 bg-black/50 rounded-lg text-left">
-          <p className="text-xs text-gray-400 font-mono break-all">
-            <strong className="text-white">User Agent:</strong><br/>
-            {debugInfo}
-          </p>
         </div>
       </div>
     </div>
