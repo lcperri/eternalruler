@@ -7,11 +7,11 @@ import wallpaper from './assets/sergi-ferrete-wall.jpg'
 const App = () => {
   return (
     <div
-    className="min-h-screen bg-cover bg-center relative flex flex-col items-center justify-center text-white text-center"
-    style={{ 
-      backgroundImage: `url(${wallpaper})`,
-      backgroundAttachment: 'fixed' //  efecto parallax
-    }}
+      className="min-h-screen bg-cover bg-center relative flex flex-col items-center justify-center text-white text-center"
+      style={{ 
+        backgroundImage: `url(${wallpaper})`,
+        backgroundAttachment: 'fixed' //  efecto parallax
+      }}
     >
       {/* Overlay oscuro */}
         {/* <div className="absolute inset-0 bg-black/20" /> */}
