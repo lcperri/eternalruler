@@ -84,7 +84,7 @@ export default function TikTokWarning() {
         <div className="space-y-3">
           <button
             onClick={openInBrowser}
-            className="w-full flex items-center justify-center gap-2 bg-red-300 hover:bg-red-400 active:bg-gray-600 text-white px-6 py-3 rounded-lg transition font-medium"
+            className="w-full flex items-center justify-center gap-2 bg-blue-700 hover:bg-blue-400 active:bg-gray-600 text-white px-6 py-3 rounded-lg transition font-medium"
           >
             🌐 Abrir en navegador
           </button>
@@ -102,11 +102,11 @@ export default function TikTokWarning() {
         </div>
 
         <div className="mt-6 text-sm text-gray-300 space-y-2">
-          <p className="font-medium text-white">Instrucciones:</p>
+          <p className="font-medium text-white">O también puedes:</p>
           <ol className="text-left space-y-1 pl-4 list-decimal">
             <li>Toca los <strong>tres puntos</strong> (⋯) arriba a la derecha</li>
             <li>Selecciona <strong>"Abrir en navegador"</strong></li>
-            <li>O copia el enlace y pégalo en Chrome</li>
+            <li>O copia el enlace y pégalo en tu navegador.</li>
           </ol>
         </div>
       </div>
