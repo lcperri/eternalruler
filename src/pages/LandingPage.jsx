@@ -1,7 +1,22 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import TikTokWarning from '../components/TiktokWarning'
 
 const LandingPage = () => {
+  const [isTikTok, setIsTikTok] = useState(false);
+
+  useEffect(() => {
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    if (/tiktok/i.test(userAgent)) {
+      setIsTikTok(true);
+    }
+  }, []);
+
+  if (isTikTok) {
+    // Si está en TikTok, solo muestra el aviso
+    return <TikTokWarning />;
+  }
+
   return (
     <div>
         {/* Overlay oscuro */}
