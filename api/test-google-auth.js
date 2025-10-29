@@ -25,12 +25,12 @@ export default async function handler(req, res) {
         let cleankey = privateKey
 
          // Si empieza y termina con comillas, quitarlas
-        if (cleankey.startsWith('"') && cleankey.endsWith('"')) {
-            cleankey = cleankey.slice(1, -1)
-        }
+        // if (cleankey.startsWith('"') && cleankey.endsWith('"')) {
+        //     cleankey = cleankey.slice(1, -1)
+        // }
 
-        // Reemplazar \n por saltos de línea reales
-        cleankey = cleankey.replace(/\\n/g, '\n')
+        // // Reemplazar \n por saltos de línea reales
+        // cleankey = cleankey.replace(/\\n/g, '\n')
 
         // lUEGO Intentar crear el cliente de autenticación
         const auth = new google.auth.JWT({
