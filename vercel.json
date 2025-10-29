@@ -2,11 +2,5 @@
   "version": 2,
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
-  ],
-  "functions": {
-    "api/*.js": {
-      "runtime": "nodejs20.x",
-      "includeFiles": "node_modules/googleapis/**"
-    }
-  }
+  ]
 }
