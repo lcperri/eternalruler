@@ -1,5 +1,3 @@
-import { google } from "googleapis";
-
 export default async function handler(req, res) {
   // 1️⃣ Verificar que las variables de entorno existan
     const email = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
@@ -66,24 +64,3 @@ export default async function handler(req, res) {
         });
     }
 }
-
-
-
-
-
-
-
-
-
-//     // 2️⃣ Mostrar información básica (sin exponer la clave completa)
-//     return res.status(200).json({
-//         success: true,
-//         message: "✅ Variables de entorno encontradas",
-//         data: {
-//         email: email,
-//         privateKeyStart: privateKey.substring(0, 30) + "...",
-//         privateKeyLength: privateKey.length,
-//         hasNewlines: privateKey.includes('\n') || privateKey.includes('\\n'),
-//         }
-//     });
-// }
