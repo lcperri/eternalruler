@@ -38,6 +38,7 @@ export default async function handler(req, res) {
             key: cleankey,
             scopes: ['https://www.googleapis.com/auth/drive.readonly']
         })
+        console.log('autorizó', auth)
 
         // Intentar autenticar con Google
         await auth.authorize()
