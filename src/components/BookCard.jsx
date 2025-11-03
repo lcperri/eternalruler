@@ -114,7 +114,7 @@ const handleDownload = async () => {
                 {book.name}
             </h3>
             <h4 className="text-xs text-gray-600 text-center mb-3">
-                Peso: {book.size}
+                Peso: {(book.size / (1024 * 1024)).toFixed(2)}MB
             </h4>
             
             <div className="flex justify-center gap-2">

@@ -25,11 +25,12 @@ export default async function handler (req, res) {
         const drive = googleDriveAuth()
         
         const data = await drive.files.list({
-            fields: `files(id,name,thumbnailLink,size)`,
+            fields: `files(id, name, thumbnailLink, mimeType, size)`,
             orderBy: 'modifiedTime desc'
         });
 
-        const files = data.data.files || []
+        //filter es para que no incluya carpeta en el resultado:
+        const files = data.data.files.filter(e => e.mimeType !== 'application/vnd.google-apps.folder') || []
         const duration = Date.now() - startTime
 
          // ========== CACHE HEADERS (CDN de Vercel) ==========
