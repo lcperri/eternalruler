@@ -20,3 +20,10 @@ export default defineConfig({
 
 
 Esto permitirá que las rutas /api/... funcionen también en desarrollo.
+
+
+
+**********************************************************************
+
+GOOGLE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\nMI...
+Debe ser con comillas en local y sin comillas en Vercel.
