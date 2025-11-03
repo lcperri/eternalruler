@@ -118,9 +118,9 @@ export default function BookCard({ book }) {
             case 'downloading':
                 return 'bg-green-500 cursor-wait';
             case 'completed':
-                return 'bg-purple-500 hover:bg-purple-600 cursor-pointer';
+                return 'bg-purple-400 hover:bg-purple-500 cursor-pointer active:bg-purple-500';
             default:
-                return 'bg-gray-400 hover:bg-gray-600 cursor-pointer';
+                return 'bg-gray-400 hover:bg-gray-600 cursor-pointer active:bg-gray-500';
         }
     };
 
@@ -133,23 +133,23 @@ export default function BookCard({ book }) {
     };
 
     return (
-        <div className="w-76 sm:w-83 py-8 px-6 bg-gray-200/95 rounded-4xl shadow-lg hover:shadow-xl transition">
+        <div className="w-80 sm:w-83 py-8 px-7 md:px-5 bg-gray-200/95 rounded-4xl shadow-lg hover:shadow-xl transition">
             <img
                 src={thumbnail}
                 alt={book.name}
-                className="mx-auto rounded-2xl mb-3 h-90 w-65 object-cover"
+                className="mx-auto rounded-2xl mb-2 h-90 w-65 object-cover"
             />
-            <h3 className="font-semibold text-gray-800 mb-2 text-sm line-clamp-2 text-center">
+            <h3 className="font-semibold text-gray-800 mb-1 text-sm line-clamp-2 text-center">
                 {book.name}
             </h3>
-            <h4 className="text-xs text-gray-600 text-center mb-3">
+            <h4 className="text-xs text-gray-600 text-center mb-2">
                 Peso: {(book.size / (1024 * 1024)).toFixed(2)}MB
             </h4>
             
             <div className="flex justify-center gap-2">
                 <button
                     onClick={() => setIsModalOpen(true)}
-                    className="cursor-pointer w-22 text-sm py-2 bg-red-300 text-white rounded-lg hover:bg-red-400 transition"
+                    className="cursor-pointer w-22 text-sm py-2 bg-red-300 text-white rounded-lg hover:bg-red-400 active:bg-red-400 transition"
                 >
                     Leer
                 </button>
@@ -169,7 +169,7 @@ export default function BookCard({ book }) {
                 <div className="bg-gray-300 rounded-full h-2 overflow-hidden">
                 <div 
                     className={`h-full transition-all duration-300 ease-out ${
-                    downloadState === 'completed' ? 'bg-purple-500' : 'bg-green-500'
+                    downloadState === 'completed' ? 'bg-purple-400' : 'bg-green-400'
                     }`}
                     style={{ width: `${downloadProgress}%` }}
                 ></div>
@@ -180,7 +180,7 @@ export default function BookCard({ book }) {
                 )}
 
                 {downloadState === 'completed' && (
-                <p className="text-xs text-purple-600 font-semibold mt-1">Completado ✅</p>
+                <p className="text-xs text-purple-400 font-semibold mt-1">Completado ✅</p>
                 )}
             </div>
             )}
