@@ -11,7 +11,7 @@ const PDFViewer = ({isOpen, onClose, book}) => {
             <div className="w-[100%] md:w-[80%] h-[100%] p-0 relative">
                 <button
                 onClick={() => onClose(false)}
-                className="w-10 h-10 cursor-pointer absolute z-10 top-15 left-5 bg-gray-300/70 hover:bg-gray-400 
+                className="w-10 h-10 cursor-pointer absolute z-10 top-4 left-4 bg-gray-300/70 hover:bg-gray-400 
                 text-white rounded-2xl px-0 py-1 text-xl font-extralight"
                 >
                     🡰
