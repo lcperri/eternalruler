@@ -12,9 +12,21 @@ const PDFViewer = ({isOpen, onClose, book}) => {
                 <button
                 onClick={() => onClose(false)}
                 className="w-10 h-10 cursor-pointer absolute z-10 top-4 left-4 bg-gray-300/70 hover:bg-gray-400 
-                text-white rounded-2xl px-0 py-1 text-xl font-extralight"
+                text-white rounded-2xl px-2 py-1 text-xl "
                 >
-                    🡰
+                    <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        width="24" 
+                        height="24" 
+                        viewBox="0 0 24 24" 
+                        fill="none" 
+                        stroke="currentColor" 
+                        strokeWidth="3" 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round"
+                    >
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
                 </button>
                 <iframe
                     src={`${window.location.origin}/api/read?id=${book.id}`} 
