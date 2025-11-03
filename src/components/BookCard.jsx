@@ -66,7 +66,8 @@ export default function BookCard({ book }) {
             const link = document.createElement('a');
             link.href = blobUrl;
             link.download = book.name;
-            // link.click();
+            document.body.appendChild(link);
+            link.click();
             
             // Pequeño delay para UX fluido antes de marcar completado
             setTimeout(() => {
