@@ -3,9 +3,6 @@ import React from 'react'
 const PDFViewer = ({isOpen, onClose, book}) => {
     if (!isOpen) return false
 
-    const bookViewUrl = `https://drive.google.com/file/d/${book.id}/preview`;
-    // const bookViewUrl = `${window.location.origin}/api/read?id=${book.id}`
-
     return (    
         <div className="fixed inset-0 bg-black/60 flex justify-center items-center z-50">
             <div className="w-[100%] md:w-[80%] h-[100%] p-0 relative">
