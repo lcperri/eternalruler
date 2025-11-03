@@ -2,7 +2,7 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import LandingPage from './pages/LandingPage';
 import Home from './pages/Home';
-import wallpaper from './assets/sergi-ferrete-wall.jpg'
+import wallpaper from './assets/sabiduria.jpg'
 
 const App = () => {
   return (

@@ -104,7 +104,7 @@ const handleDownload = async () => {
 };
 
     return (
-        <div className="w-76 sm:w-83 py-8 px-6 bg-gray-200 rounded-4xl shadow-lg hover:shadow-xl transition">
+        <div className="w-76 sm:w-83 py-8 px-6 bg-gray-200/95 rounded-4xl shadow-lg hover:shadow-xl transition">
             <img
                 src={thumbnail}
                 alt={book.name}
