@@ -105,7 +105,7 @@ export default function TikTokWarning() {
           <ol className="text-left space-y-1 pl-4 list-decimal">
             <li>Toca los <strong>tres puntos</strong> (⋯) arriba a la derecha</li>
             <li>Selecciona <strong>"Abrir en navegador"</strong></li>
-            <li>O copia el enlace y pégalo en tu navegador.</li>
+            <li>O copia el enlace y pégalo en tu navegador preferido.</li>
           </ol>
         </div>
       </div>
