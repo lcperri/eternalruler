@@ -149,7 +149,7 @@ export default function BookCard({ book }) {
             <div className="flex justify-center gap-2">
                 <button
                     onClick={() => setIsModalOpen(true)}
-                    className="cursor-pointer w-22 text-sm py-2 bg-red-300 text-white rounded-lg hover:bg-red-400 active:bg-red-400 transition"
+                    className="cursor-pointer w-22 text-sm py-2 bg-red-300 text-black font-semibold rounded-lg hover:bg-red-400 active:bg-red-400 transition"
                 >
                     Leer
                 </button>
@@ -157,7 +157,7 @@ export default function BookCard({ book }) {
                 <button
                     onClick={handleButtonClick}
                     disabled={downloadState === 'preparing' || downloadState === 'downloading'}
-                    className={`w-26 text-sm py-2 text-white rounded-lg transition ${getButtonStyle()}`}
+                    className={`w-26 text-sm py-2 text-white  rounded-lg transition ${getButtonStyle()}`}
                 >
                     {getButtonContent()}
                 </button>
