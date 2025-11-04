@@ -142,7 +142,7 @@ export default function BookCard({ book }) {
             <h3 className="font-semibold text-gray-800 mb-1 text-sm line-clamp-2 text-center">
                 {book.name}
             </h3>
-            <h4 className="text-xs text-gray-600 text-center mb-2">
+            <h4 className="text-xs text-gray-600 text-center mb-3">
                 Peso: {(book.size / (1024 * 1024)).toFixed(2)}MB
             </h4>
             
