@@ -6,7 +6,7 @@ const LandingPage = () => {
 
   return (
     <div>
-        <TikTokWarning />
+        {/* <TikTokWarning /> */}
         {/* Contenido principal */}
         <div className="relative z-10 mx-10 px-6 py-8 md:px-12 lg:px-24 bg-black/50 rounded-3xl shadow-xl">
             <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">
