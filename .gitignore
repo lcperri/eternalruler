@@ -28,4 +28,3 @@ dist-ssr
 
 .vercel
 .env*.local
-vercel.json
