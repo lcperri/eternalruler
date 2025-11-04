@@ -82,13 +82,12 @@ export default function TikTokWarning() {
         </p>
 
         <div className="space-y-3">
-          <button
+          {/* <button
             onClick={openInBrowser}
             className="w-full flex items-center justify-center gap-2 bg-blue-500 hover:bg-blue-400 active:bg-gray-600 text-white px-6 py-3 rounded-lg transition font-medium"
           >
             🌐 Abrir en navegador
-          </button>
-
+          </button> */}
           <button
             onClick={handleCopy}
             className={`w-full flex items-center justify-center gap-2 px-6 py-3 rounded-lg transition font-medium ${
