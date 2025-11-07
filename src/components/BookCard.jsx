@@ -87,8 +87,10 @@ export default function BookCard({ book }) {
         if (downloadedFileUrl) {
             // Abrir el archivo en nueva pestaña
             window.open(downloadedFileUrl, '_blank');
+            // window.open(downloadedFileUrl, '_self')
+            // window.location.href = downloadedFileUrl
         }
-    };
+    }
 
     const getButtonContent = () => {
         switch (downloadState) {
@@ -139,8 +141,11 @@ export default function BookCard({ book }) {
                 alt={book.name}
                 className="mx-auto rounded-2xl mb-2 h-90 w-65 object-cover"
             />
-            <h3 className="font-semibold text-gray-800 mb-1 text-sm line-clamp-2 text-center">
-                {book.name}
+            <h3 className="font-semibold text-gray-800 mb-1 text-sm line-clamp-2 text-center"
+                dangerouslySetInnerHTML={{ __html: book.highlightedName || book.name }}
+            >   
+                {/* {book.name} */}
+                
             </h3>
             <h4 className="text-xs text-gray-600 text-center mb-3">
                 Peso: {(book.size / (1024 * 1024)).toFixed(2)}MB
@@ -161,6 +166,7 @@ export default function BookCard({ book }) {
                 >
                     {getButtonContent()}
                 </button>
+
             </div>
 
            {/* Barra de progreso y estado visual */}

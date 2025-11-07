@@ -1,7 +1,7 @@
 import googleDriveAuth from "../src/services/googleDriveAuth.js";
 
 export default async function handler (req, res) {
-     // ========== CORS HEADERS ==========
+    // ========== CORS HEADERS ==========
     res.setHeader('Access-Control-Allow-Credentials', 'true')
     res.setHeader('Access-Control-Allow-Origin', '*')
     res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS')

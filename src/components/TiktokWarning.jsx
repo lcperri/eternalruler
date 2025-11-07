@@ -93,7 +93,7 @@ export default function TikTokWarning() {
             className={`w-full flex items-center justify-center gap-2 px-6 py-3 rounded-lg transition font-medium ${
               copied 
                 ? 'bg-green-500 text-white' 
-                : 'bg-white/10 hover:bg-white/20 active:bg-white/30 text-white border border-white/30'
+                : 'bg-blue-500/90 hover:bg-white/20 active:bg-white/30 text-white border border-white/30'
             }`}
           >
             {copied ? '✅ ¡Enlace copiado!' : '📋 Copiar enlace'}
