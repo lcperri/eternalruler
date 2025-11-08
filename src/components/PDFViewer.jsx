@@ -8,6 +8,14 @@ const PDFViewer = ({isOpen, onClose, book}) => {
             <div className="w-[100%] md:w-[80%] h-[100%] p-0 relative">
                 <button
                 onClick={() => onClose(false)}
+                style={{
+                        position: 'fixed',
+                        top: 'max(12px, 1vh)',  // Se adapta al viewport
+                        left: 'max(12px, 1vw)',
+                        zIndex: 9999,
+                        transform: 'scale(1)', // Previene zoom del botón
+                        transformOrigin: 'top left'
+                    }}
                 className="w-10 h-10 cursor-pointer fixed z-[9999] top-3 left-1 bg-gray-400/70 hover:bg-gray-400 active:bg-gray-400 
                 text-white rounded-full px-2 py-1 text-xl shadow-2xl"
                 >
