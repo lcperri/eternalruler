@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import sabiduriaVol2Tum from '../assets/sabiduria-vol2.png'
+import recuperaFuerzaEenergia from '../assets/recupera-fuerza-energia.png'
+
 import PDFViewer from './PDFViewer';
 
 export default function BookCard({ book }) {
@@ -8,11 +10,22 @@ export default function BookCard({ book }) {
     const [downloadProgress, setDownloadProgress] = useState(0);
     const [downloadedFileUrl, setDownloadedFileUrl] = useState(null);
 
-    const bookIDWithoutTumb = '1hjelxF7GGybwtELthzi67i3ZRLQVkFsJ'
-    const thumbnail = 
-        book.id === bookIDWithoutTumb 
-        ? sabiduriaVol2Tum
-        : book.thumbnailLink?.replace('=s220', '=s600')
+
+    const bookIdRecuperaFuerza = '1hgNF2eLSm1qm7NB3RSxRDPWQdIFpODVw' //Libro Recupera fueraza y energia interior
+    const bookIdSabiduriaVol2 = '1hjelxF7GGybwtELthzi67i3ZRLQVkFsJ'//Libro sabidsuria vol2
+
+    let thumbnail
+    switch (book.id) {
+        case bookIdRecuperaFuerza:
+            thumbnail = recuperaFuerzaEenergia
+            break
+        case bookIdSabiduriaVol2:
+            thumbnail = sabiduriaVol2Tum
+            break
+        default:
+            thumbnail = book.thumbnailLink?.replace('s=220', '=s600')
+    }
+    console.log(thumbnail)
 
     const handleDownload = async () => {
         setDownloadState('preparing');
