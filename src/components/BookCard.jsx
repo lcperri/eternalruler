@@ -18,10 +18,8 @@ export default function BookCard({ book }) {
     switch (book.id) {
         case bookIdRecuperaFuerza:
             thumbnail = recuperaFuerzaEenergia
-            break
         case bookIdSabiduriaVol2:
             thumbnail = sabiduriaVol2Tum
-            break
         default:
             thumbnail = book.thumbnailLink?.replace('s=220', '=s600')
     }
