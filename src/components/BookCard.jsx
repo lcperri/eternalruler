@@ -23,7 +23,7 @@ export default function BookCard({ book }) {
             thumbnail = sabiduriaVol2Tum
             break
         default:
-            thumbnail = book.thumbnailLink?.replace('s=220', '=s600')
+            thumbnail = book.thumbnailLink?.replace('=s220', '=s600')
     }
     console.log(thumbnail)
 
