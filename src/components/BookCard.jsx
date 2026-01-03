@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import sabiduriaVol2Tum from '../assets/sabiduria-vol2.png'
 import recuperaFuerzaEenergia from '../assets/recupera-fuerza-energia.png'
+import cuerpoHabla from '../assets/cuerpo-habla.png'
 
 import PDFViewer from './PDFViewer';
 
@@ -13,6 +14,7 @@ export default function BookCard({ book }) {
 
     const bookIdRecuperaFuerza = '1hgNF2eLSm1qm7NB3RSxRDPWQdIFpODVw' //Libro Recupera fueraza y energia interior
     const bookIdSabiduriaVol2 = '1hjelxF7GGybwtELthzi67i3ZRLQVkFsJ'//Libro sabidsuria vol2
+    const bookIdCuerpoHabla= '1pZ-IzCrJl1nYkLhDOg7VT3Rag2aOV9Q3'//libro el cuerpo habla
 
     let thumbnail
     switch (book.id) {
@@ -21,6 +23,9 @@ export default function BookCard({ book }) {
             break
         case bookIdSabiduriaVol2:
             thumbnail = sabiduriaVol2Tum
+            break
+        case bookIdCuerpoHabla:
+            thumbnail = cuerpoHabla
             break
         default:
             thumbnail = book.thumbnailLink?.replace('=s220', '=s600')
